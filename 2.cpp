@@ -2,7 +2,9 @@
 
 using namespace std;
 
-string kota_asal, kota_tujuan, n_maskapai, waktu, kode, durasi, harga;
+string kota_asal, kota_tujuan, n_maskapai, waktu, kode, durasi;
+
+long double harga;
 
 int j,cari, pil_kota_asal, pil_kota_tujuan, maskapai, p_maskapai,menu,menu_utama,jml_penumpang, ketemu;
 
@@ -61,13 +63,23 @@ void pilihan_maskapai(){
             system("cls");
             goto pesan_tiket;
         }else if(menu_utama == 2){
+            system("cls");
             goto daftar_penumpang;
         }else if(menu_utama == 3){
+            system("cls");
             goto pesanan_saya;
+        }else if(menu_utama == 4){
+            system("cls");
+            goto pembayaran;
+        }else{
+            system("cls");
+            cout<<" Perintah tidak tersedia "<<endl;
+            goto menu_utama;
         }
 
 
 pesan_tiket :
+    garis();
     cout<<" Masukkan Jumlah Penumpang : ";
     cin>>jml_penumpang;
 
@@ -188,28 +200,28 @@ pilih_kota_tujuan :
                         waktu = "\t = 07.45 --> 10.00 ";
                         kode = "\t = CGK   --> BDO ";
                         durasi = "\t = 2 jam 15 menit ";
-                        harga = " 441.650 ";
+                        harga = 441650;
                     break;
                     case 2 :
                         n_maskapai = "\t = Citilink ";
                         waktu = "\t = 11.00 --> 13.35 ";
                         kode = "\t = CGK   --> BDO ";
                         durasi = "\t = 2 jam 35 menit ";
-                        harga = " 457.704 ";
+                        harga = 457704 ;
                     break;
                     case 3 :
                         n_maskapai = "\t = Batik Air ";
                         waktu = "\t = 15.00 --> 17.20 ";
                         kode = "\t = CGK    --> BDO ";
                         durasi = "\t = 2 jam 20 menit ";
-                        harga = " 413.700 ";
+                        harga = 413700 ;
                     break;
                     default :
                         n_maskapai = "\t === ";
                         waktu = "\t === ";
                         kode = "\t === ";
                         durasi = "\t === ";
-                        harga = "\t === ";
+                        harga = 0;
                     break;
 
                 }
@@ -241,28 +253,28 @@ pilih_kota_tujuan :
                         waktu = "\t = 08.55 --> 10.10 ";
                         kode = "\t = CGK    --> YIA ";
                         durasi = "\t = 1 jam 15 menit ";
-                        harga = " 674.288 ";
+                        harga = 674288 ;
                     break;
                     case 2 :
                         n_maskapai = "\t = Super Air Jet ";
                         waktu = "\t = 11.00 --> 12.15 ";
                         kode = "\t = CGK    --> YIA ";
                         durasi = "\t = 1 jam 15 menit ";
-                        harga = " 875.283 ";
+                        harga = 875283;
                     break;
                     case 3 :
                         n_maskapai = "\t = Batik Air ";
                         waktu = "\t = 12.30 --> 13.45 ";
                         kode = "\t = HLP    --> YIA ";
                         durasi = "\t = 1 jam 15 menit ";
-                        harga = " 1.091.288 ";
+                        harga = 1091288 ;
                     break;
                     default :
                         n_maskapai = "\t === ";
                         waktu = "\t === ";
                         kode = "\t === ";
                         durasi = "\t === ";
-                        harga = "\t === ";
+                        harga = 0;
                     break;
 
                 }
@@ -304,28 +316,28 @@ pilih_kota_tujuan :
                         waktu = "\t = 07.45 --> 10.00 ";
                         kode = "\t = BDO    --> CGK ";
                         durasi = "\t = 2 jam 15 menit ";
-                        harga = " 441.650 ";
+                        harga = 441650 ;
                     break;
                     case 2 :
                         n_maskapai = "\t = Citilink ";
                         waktu = "\t = 11.00 --> 13.35 ";
                         kode = "\t = BDO   --> HLP ";
                         durasi = "\t = 2 jam 35 menit ";
-                        harga = " 457.704 ";
+                        harga = 457704 ;
                     break;
                     case 3 :
                         n_maskapai = "\t = Batik Air ";
                         waktu = "\t = 15.00 --> 17.20 ";
                         kode = "\t = BDO    --> CGK ";
                         durasi = "\t = 2 jam 20 menit ";
-                        harga = " 413.700 ";
+                        harga = 413700 ;
                     break;
                     default :
                         n_maskapai = "\t === ";
                         waktu = "\t === ";
                         kode = "\t === ";
                         durasi = "\t === ";
-                        harga = "\t === ";
+                        harga = 0;
                     break;
 
                 }
@@ -351,21 +363,21 @@ pilih_kota_tujuan :
                         waktu = "\t = 07.00 --> 08.10 ";
                         kode = "\t = BDO    --> JOG ";
                         durasi = "\t = 1 jam 10 menit ";
-                        harga = " 1.534.900 ";
+                        harga = 1534900 ;
                     break;
                     case 2 :
                         n_maskapai = "\t = Lion JT ";
                         waktu = "\t = 09.10 --> 11.50 -- 12.50 --> 13.15 ";
                         kode = "\t = BDO   -->  DPS  --> YIA ";
                         durasi = "\t = 4 jam 5 menit ";
-                        harga = " 2.824.750 ";
+                        harga = 2824750 ;
                     break;
                     default :
                         n_maskapai = "\t === ";
                         waktu = "\t === ";
                         kode = "\t === ";
                         durasi = "\t === ";
-                        harga = "\t === ";
+                        harga = 0;
                     break;
 
                 }
@@ -404,28 +416,28 @@ pilih_kota_tujuan :
                         waktu = "\t = 08.55 --> 10.10 ";
                         kode = "\t = YIA    --> CGK ";
                         durasi = "\t = 1 jam 10 menit ";
-                        harga = " 674.288 ";
+                        harga =  674288 ;
                     break;
                     case 2 :
                         n_maskapai = "\t = Super Air Jet ";
                         waktu = "\t = 11.00 --> 12.15 ";
                         kode = "\t = YIA   --> CGK ";
                         durasi = "\t = 1 jam 15 menit ";
-                        harga = " 875.283 ";
+                        harga = 875283 ;
                     break;
                     case 3 :
                         n_maskapai = "\t = Batik Air ";
                         waktu = "\t = 12.30 --> 13.455 ";
                         kode = "\t = YIA    --> HLP ";
                         durasi = "\t = 1 jam 15 menit ";
-                        harga = " 1.091.288 ";
+                        harga =  1091288 ;
                     break;
                     default :
                         n_maskapai = "\t === ";
                         waktu = "\t === ";
                         kode = "\t === ";
                         durasi = "\t === ";
-                        harga = "\t === ";
+                        harga = 0;
                     break;
 
                 }
@@ -451,21 +463,21 @@ pilih_kota_tujuan :
                         waktu = "\t = 07.00 --> 08.10 ";
                         kode = "\t = JOG    --> BDO ";
                         durasi = "\t = 1 jam 10 menit ";
-                        harga = " 1.534.900 ";
+                        harga = 1534900 ;
                     break;
                     case 2 :
                         n_maskapai = "\t = Lion JT ";
                         waktu = "\t = 09.10 --> 11.50 -- 12.50 --> 13.15 ";
                         kode = "\t = YIA    -->  DPS  --> BDO ";
                         durasi = "\t = 4 jam 5 menit ";
-                        harga = " 2.824.750 ";
+                        harga = 2824750 ;
                     break;
                     default :
                         n_maskapai = "\t === ";
                         waktu = "\t === ";
                         kode = "\t === ";
                         durasi = "\t === ";
-                        harga = "\t === ";
+                        harga = 0;
                     break;
 
                 }
@@ -489,16 +501,29 @@ pilih_kota_tujuan :
     garis();
 
 pesanan_saya :
-    for(int i = 1; i <= jml_penumpang; i++){
-        cout<<" Nama Penumpang "<< i <<" : "<<p[i].nama<<endl;
-        cout<<" Nomor Induk Kependudukan : "<<p[i].pasport<<endl;
-        cout<<n_maskapai<<endl;
-        cout<<waktu<<endl;
-        cout<<kode<<endl;
-        cout<<durasi<<endl;
-        cout<<"\t = Harga : "<<harga<<endl;
+    if(jml_penumpang > 1){
+        for(int i = 1; i <= jml_penumpang; i++){
+            cout<<" Nama Penumpang "<< i <<" : "<<p[i].nama<<endl;
+            cout<<" Nomor Induk Kependudukan : "<<p[i].pasport<<endl;
+            cout<<n_maskapai<<endl;
+            cout<<waktu<<endl;
+            cout<<kode<<endl;
+            cout<<durasi<<endl;
+            cout<<"\t = Harga : "<<harga<<endl;
+            garis();
+        }
+    }else if(jml_penumpang == 0){
+        system("cls");
         garis();
+        cout<<"\t\t\t Data Pesanan Kosong "<<endl;
+        cout<<"\t\t Silahkan Pesan Tiket Terlebih Dahulu "<<endl;
+        garis();
+        goto pesan_tiket;
+    }else{
+        cout<<" Perintah Tidak Tersedia "<<endl;
+        goto menu_utama;
     }
+
     cout<<endl;
     cout<<" Menu : "<<endl;
     cout<<" 1. Kembali Ke Menu"<<endl;
@@ -512,6 +537,7 @@ pesanan_saya :
         exit(0);
     }else{
         cout<<" Perintah Tidak Tersedia "<<endl;
+        goto menu_utama;
     }
 
 daftar_penumpang :
@@ -567,6 +593,55 @@ daftar_penumpang :
     }else{
         cout<<" Perintah Tidak Tersedia "<<endl;
     }
+
+
+pembayaran :
+    double total;
+    system("cls");
+    garis();
+    if(jml_penumpang > 1){
+        for(int i = 1; i <= jml_penumpang; i++){
+            cout<<" Nama Penumpang "<< i <<" : "<<p[i].nama<<endl;
+            cout<<" Nomor Induk Kependudukan : "<<p[i].pasport<<endl;
+            cout<<n_maskapai<<endl;
+            cout<<waktu<<endl;
+            cout<<kode<<endl;
+            cout<<durasi<<endl;
+            cout<<"\t = Harga : "<<harga<<endl;
+            garis();
+        }
+
+        total = (harga * jml_penumpang);
+        cout<<" Total Pembayaran : Rp. "<< total <<endl;
+
+    }else if(jml_penumpang == 0){
+        system("cls");
+        garis();
+        cout<<"\t\t\t Data Pesanan Kosong "<<endl;
+        cout<<"\t\t Silahkan Pesan Tiket Terlebih Dahulu "<<endl;
+        garis();
+        goto pesan_tiket;
+    }else{
+        cout<<" Perintah Tidak Tersedia "<<endl;
+        goto menu_utama;
+    }
+
+    cout<<endl;
+    cout<<" Menu : "<<endl;
+    cout<<" 1. Kembali Ke Menu"<<endl;
+    cout<<" 2. Keluar "<<endl;
+    cout<<" Pilih Menu : ";
+    cin>>menu;
+    system("cls");
+    if (menu == 1){
+        goto menu_utama;
+    }else if(menu == 2){
+        exit(0);
+    }else{
+        cout<<" Perintah Tidak Tersedia "<<endl;
+        goto menu_utama;
+    }
+
 
 }
 
