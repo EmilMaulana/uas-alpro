@@ -4,10 +4,12 @@ using namespace std;
 
 string kota_asal, kota_tujuan, n_maskapai, waktu, kode, durasi, harga;
 
-int pil_kota_asal, pil_kota_tujuan, maskapai, p_maskapai,menu,jml_penumpang;
+int j,cari, pil_kota_asal, pil_kota_tujuan, maskapai, p_maskapai,menu,menu_utama,jml_penumpang, ketemu;
+
 
 //materi array
 string kota[3] = {"Jakarta", "Bandung", "Yogyakarta"};
+
 
 
 //function garis
@@ -26,15 +28,65 @@ void header(){
 }
 
 
+
 //function menu
 
 
 //percabangan, perulangan, operator, fungsi, array, pointer, struct
 
+struct Penumpang{
+    char nama[100];
+    int pasport;
+};
+
 //function maskapai
 void pilihan_maskapai(){
 
-    pilih_kota_asal :
+    menu_utama :
+        header();
+        cout<<endl;
+        garis();
+        cout<<" \t\t\t\t Menu Utama"<<endl;
+        garis();
+        cout<<" =\t 1. Pesan Tiket "<<endl;
+        cout<<" =\t 2. Lihat Daftar Penumpang "<<endl;
+        cout<<" =\t 3. Cek Pemesanan "<<endl;
+        cout<<" =\t 4. Pembayaran "<<endl;
+        cout<<endl;
+        cout<<" Silahkan Input Pilihan : ";
+        cin>>menu_utama;
+        garis();
+
+        if(menu_utama == 1){
+            system("cls");
+            goto pesan_tiket;
+        }else if(menu_utama == 2){
+            goto daftar_penumpang;
+        }else if(menu_utama == 3){
+            goto pesanan_saya;
+        }
+
+
+pesan_tiket :
+    cout<<" Masukkan Jumlah Penumpang : ";
+    cin>>jml_penumpang;
+
+    Penumpang *p;
+	p = new Penumpang[100];
+
+    for(int i = 1; i <= jml_penumpang; i++){
+        cout<<" Masukkan Nama Penumpang "<< i <<" : ";
+        cin>>p[i].nama;
+        cout<<" Masukkan No. Pasport Penumpang "<< i <<" : ";
+        cin>>p[i].pasport;
+        garis();
+    }
+
+
+
+
+
+pilih_kota_asal :
         cout<<endl;
         garis();
         cout<<"\t\t\t\t Pilih Kota Asal "<<endl;
@@ -68,7 +120,7 @@ void pilihan_maskapai(){
                 cout<<" \t\tKota asal belum tersedia, Silahkan pilih ulang!"<<endl;
                 goto pilih_kota_asal;
         }
-    pilih_kota_tujuan :
+pilih_kota_tujuan :
         cout<<endl;
         garis();
         cout<<"\t\t\t\t Pilih Kota Tujuan "<<endl;
@@ -130,8 +182,6 @@ void pilihan_maskapai(){
                 garis();
                 cout<<" Silahkan Pilih Maskapai [ 1,2,3 ] : ";
                 cin>>p_maskapai;
-                cout<<" Masukkan Jumlah Penumpang : ";
-                cin>>jml_penumpang;
                 switch(p_maskapai){
                     case 1 :
                         n_maskapai = "\t = Lion Air ";
@@ -185,8 +235,6 @@ void pilihan_maskapai(){
                 garis();
                 cout<<" Silahkan Pilih Maskapai [ 1,2,3 ] : ";
                 cin>>p_maskapai;
-                cout<<" Masukkan Jumlah Penumpang : ";
-                cin>>jml_penumpang;
                 switch(p_maskapai){
                     case 1 :
                         n_maskapai = "\t = Lion Air ";
@@ -250,8 +298,6 @@ void pilihan_maskapai(){
                 garis();
                 cout<<" Silahkan Pilih Maskapai [ 1,2,3 ] : ";
                 cin>>p_maskapai;
-                cout<<" Masukkan Jumlah Penumpang : ";
-                cin>>jml_penumpang;
                 switch(p_maskapai){
                     case 1 :
                         n_maskapai = "\t = Lion Air ";
@@ -299,8 +345,6 @@ void pilihan_maskapai(){
                 garis();
                 cout<<" Silahkan Pilih Maskapai [ 1,2 ] : ";
                 cin>>p_maskapai;
-                cout<<" Masukkan Jumlah Penumpang : ";
-                cin>>jml_penumpang;
                 switch(p_maskapai){
                     case 1 :
                         n_maskapai = "\t = Wings Abadi Airlines ";
@@ -354,8 +398,6 @@ void pilihan_maskapai(){
                 garis();
                 cout<<" Silahkan Pilih Maskapai [ 1,2,3 ] : ";
                 cin>>p_maskapai;
-                cout<<" Masukkan Jumlah Penumpang : ";
-                cin>>jml_penumpang;
                 switch(p_maskapai){
                     case 1 :
                         n_maskapai = "\t = Lion Air ";
@@ -403,8 +445,6 @@ void pilihan_maskapai(){
                 garis();
                 cout<<" Silahkan Pilih Maskapai [ 1,2 ] : ";
                 cin>>p_maskapai;
-                cout<<" Masukkan Jumlah Penumpang : ";
-                cin>>jml_penumpang;
                 switch(p_maskapai){
                     case 1 :
                         n_maskapai = "\t = Wings Abadi Airlines ";
@@ -447,33 +487,95 @@ void pilihan_maskapai(){
     cout<<"\t "<<kota_asal<<" --> "<<kota_tujuan;
     cout<<endl;
     garis();
-    cout<<n_maskapai<<endl;
-    cout<<waktu<<endl;
-    cout<<kode<<endl;
-    cout<<durasi<<endl;
-    cout<<"\t = Harga : "<<harga<<endl;
-    garis();
-    cout<<" Masukkan identitas penumpang : ";
-    //garis();
-    //cout<<" Menu : "<<endl;
-    //cout<<" 1. Kembali Ke Menu"<<endl;
-    //cout<<" 2. Keluar "<<endl;
-    //cout<<" Pilih Menu : ";
-    //cin>>menu;
-    //system("cls");
-    //if (menu == 1){
-    //    goto pilih_kota_asal;
-    //}else if(menu == 2){
-    //    exit(0);
-    //}else{
-    //    cout<<" Perintah Tidak Tersedia "<<endl;
-    //}
 
+pesanan_saya :
+    for(int i = 1; i <= jml_penumpang; i++){
+        cout<<" Nama Penumpang "<< i <<" : "<<p[i].nama<<endl;
+        cout<<" Nomor Induk Kependudukan : "<<p[i].pasport<<endl;
+        cout<<n_maskapai<<endl;
+        cout<<waktu<<endl;
+        cout<<kode<<endl;
+        cout<<durasi<<endl;
+        cout<<"\t = Harga : "<<harga<<endl;
+        garis();
+    }
+    cout<<endl;
+    cout<<" Menu : "<<endl;
+    cout<<" 1. Kembali Ke Menu"<<endl;
+    cout<<" 2. Keluar "<<endl;
+    cout<<" Pilih Menu : ";
+    cin>>menu;
+    system("cls");
+    if (menu == 1){
+        goto menu_utama;
+    }else if(menu == 2){
+        exit(0);
+    }else{
+        cout<<" Perintah Tidak Tersedia "<<endl;
+    }
+
+daftar_penumpang :
+    if(jml_penumpang > 0){
+        for(int i = 1; i <= jml_penumpang; i++){
+            cout<<" Data Penumpang Ke "<< i <<endl;
+            cout<<" Nomor Pasport : "<<p[i].pasport<<endl;
+        }
+        garis();
+
+    }else if(jml_penumpang == 0){
+        system("cls");
+        garis();
+        cout<<"\t\t\t Data Penumpang Kosong "<<endl;
+        cout<<"\t\t Silahkan Tambahkan Penumpang Terlebih Dahulu "<<endl;
+        garis();
+        goto pesan_tiket;
+    }
+
+
+
+    cout<<" Cari Penumpang Berdasarkan No. passport : ";
+    cin>>cari;
+
+
+    ketemu=0;
+    for (int i = 1; i <= jml_penumpang; i++){
+        if (p[i].pasport == cari){
+            garis();
+            ketemu = 1;
+            cout<<" berada di indeks ke " << i  << ".\n";
+            cout<<" Nama Penumpang : "<< p[i].nama;
+            cout<<endl;
+            garis();
+          break;
+        }
+    }
+    if(ketemu == 0){
+        cout<<"Data tidak ditemukan"<<endl;
+    }
+
+    cout<<endl;
+    cout<<" Menu : "<<endl;
+    cout<<" 1. Kembali Ke Menu"<<endl;
+    cout<<" 2. Keluar "<<endl;
+    cout<<" Pilih Menu : ";
+    cin>>menu;
+    system("cls");
+    if (menu == 1){
+        goto menu_utama;
+    }else if(menu == 2){
+        exit(0);
+    }else{
+        cout<<" Perintah Tidak Tersedia "<<endl;
+    }
 
 }
 
+
+
+//void displayData(Penumpang);
+
+
 int main(){
-    header();
     pilihan_maskapai();
 
     return 0;
