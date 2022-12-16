@@ -501,7 +501,7 @@ pilih_kota_tujuan :
     garis();
 
 pesanan_saya :
-    if(jml_penumpang > 1){
+    if(jml_penumpang >= 1){
         for(int i = 1; i <= jml_penumpang; i++){
             cout<<" Nama Penumpang "<< i <<" : "<<p[i].nama<<endl;
             cout<<" Nomor Induk Kependudukan : "<<p[i].pasport<<endl;
@@ -599,7 +599,7 @@ pembayaran :
     double total;
     system("cls");
     garis();
-    if(jml_penumpang > 1){
+    if(jml_penumpang >= 1){
         for(int i = 1; i <= jml_penumpang; i++){
             cout<<" Nama Penumpang "<< i <<" : "<<p[i].nama<<endl;
             cout<<" Nomor Induk Kependudukan : "<<p[i].pasport<<endl;
